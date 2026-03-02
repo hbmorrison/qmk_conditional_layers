@@ -1,0 +1,8 @@
+{
+    "module_name": "Conditional Layers",
+    "maintainer": "hbmorrison",
+    "license": "Apache-2.0",
+    "url": "https://github.com/hbmorrison/qmk_conditional_layers.git",
+    "features": {},
+    "keycodes": []
+}

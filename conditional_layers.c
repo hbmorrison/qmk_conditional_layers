@@ -39,13 +39,13 @@ layer_state_t layer_state_set_conditional_layers(layer_state_t state) {
   return state;
 }
 
-__attribute__((weak)) void conditional_layer_set() {
+__attribute__((weak)) void add_conditional_layers() {
 }
 
 void keyboard_post_init_conditional_layers() {
-  conditional_layer_set();
+  add_conditional_layers();
 }
 
-void conditional_layer_set_mask(layer_state_t layer, layer_state_t mask) {
+void set_conditional_layer_mask(layer_state_t layer, layer_state_t mask) {
   conditional_layer[layer] = mask;
 }

@@ -28,5 +28,5 @@
 
 // Function declarations.
 
-void conditional_layer_set(void);
-void conditional_layer_set_mask(layer_state_t, layer_state_t);
+void add_conditional_layers(void);
+void set_conditional_layer_mask(layer_state_t, layer_state_t);

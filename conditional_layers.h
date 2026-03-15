@@ -14,19 +14,17 @@
 
 #pragma once
 
+// Include the standard QMK headers.
+
 #include QMK_KEYBOARD_H
 
-// Indicates that the conditional layer is not being used.
+// Function declarations.
 
-#define CL_NO_MASK (0)
+void add_conditional_layers(void);
+void set_conditional_layer_mask(layer_state_t, layer_state_t);
 
 // Works out the layer bit associated with a given layer. A layer mask can be
 // built up using logical-or.
 // e.g. LAYER_BIT(LAYER_BASE) | LAYER_BIT(LAYER_SYMBOL)
 
 #define LAYER_BIT(code) (1 << ((code) & 0x7f))
-
-// Function declarations.
-
-void add_conditional_layers(void);
-void set_conditional_layer_mask(layer_state_t, layer_state_t);

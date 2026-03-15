@@ -12,15 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "print.h"
-#include "keymap.h"
 #include "conditional_layers.h"
 
 // Stores conditional layer masks that will be checked against the layer state
 // as it changes over time.
 
 static layer_state_t conditional_layer[MAX_LAYER] = {
-  [0 ... MAX_LAYER - 1] = CL_NO_MASK
+  [0 ... MAX_LAYER - 1] = 0
 };
 
 layer_state_t layer_state_set_conditional_layers(layer_state_t state) {
@@ -29,7 +27,7 @@ layer_state_t layer_state_set_conditional_layers(layer_state_t state) {
 
   for (uint16_t layer = 0; layer < MAX_LAYER; ++layer) {
     layer_state_t mask = conditional_layer[layer];
-    if (mask != CL_NO_MASK) {
+    if (mask) {
       if ((mask & state) == mask)
         state |= LAYER_BIT(layer);
       else
